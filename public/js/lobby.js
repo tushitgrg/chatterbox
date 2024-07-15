@@ -10,6 +10,12 @@ function generateRandomString(length) {
     return result;
 }
 
+const queryString = window.location.search
+const urlPARAMS = new URLSearchParams(queryString)
+meeting_id =urlPARAMS.get('id');
+if(meeting_id){
+    document.getElementById("meetingtxt").value=meeting_id;
+}
 function joinRoom(nametxt,meetingtxt){
 
     if(!nametxt.value || nametxt.value==""){
