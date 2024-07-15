@@ -18,9 +18,6 @@ if(!uid){
 uid = generateRandomString(10);
 sessionStorage.setItem("uid",uid)
 }
-if(!localStorage.getItem("displayName")){
-    window.location = "/"
-}
 
 
 let token = null;
@@ -28,12 +25,17 @@ let client;
 
 let rtmclient;
 let channel;
+
 const queryString = window.location.search
 const urlPARAMS = new URLSearchParams(queryString)
 meeting_id =urlPARAMS.get('id');
 if(!meeting_id){
     window.location.href="/";
 }
+if(!localStorage.getItem("displayName")){
+    window.location = "/?id="+meeting_id
+}
+
 
 let localtracks = []
 let remoteUsers = {}
