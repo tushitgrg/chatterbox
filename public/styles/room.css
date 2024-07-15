@@ -277,6 +277,9 @@
   #messages__container {
     display: none;
   }
+  #screen-btn{
+    display: none;
+  }
 
   #chat__button {
     display: block;
